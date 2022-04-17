@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MatchingGame {
 
     public static Letter[][] cards = new Letter[4][4];
-    public static Letter[][] board = new Letter[0][0];
+    public static Letter[][] board = new Letter[4][4];
     public static ShuffleCards shuffle = new ShuffleCards();
     public static deckForNewGame deck = new deckForNewGame();
     public static GameOver over = new GameOver();
