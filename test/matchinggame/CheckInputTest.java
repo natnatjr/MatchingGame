@@ -59,9 +59,9 @@ public class CheckInputTest extends TestCase {
         // we expect an exception to be thrown by the checkInput method as the row and column are out of bounds
         try {
             instance.checkInput(row, column);
+            fail("Should have thrown an exception");
         } catch (ArrayIndexOutOfBoundsException e) {
             assertTrue(true);
-            fail("Should have thrown an exception");
 
         }
     }

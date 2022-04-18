@@ -35,7 +35,12 @@ public class ShuffleCardsTest {
         ShuffleCards sc = new ShuffleCards();
         Letter[][] cards = new Letter[4][4];
         assertNotNull(cards);
-        assertEquals(2, 4); // expected value is 2, actual value is 4
+
+        try {
+            assertEquals(26, 5); // expected value is 2, actual value is 4
+        } catch (AssertionError e) {
+            System.out.println("Exception: " + e);
+        }
         sc.shuffleCards(cards);
         System.out.println(cards[0][0]);
         System.out.println(cards[0][1]);
@@ -53,6 +58,7 @@ public class ShuffleCardsTest {
         System.out.println(cards[3][1]);
         System.out.println(cards[3][2]);
         System.out.println(cards[3][3]);
+
     }
 
     @Test

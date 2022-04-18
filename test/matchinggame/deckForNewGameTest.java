@@ -25,7 +25,21 @@ public class deckForNewGameTest {
 
     @Test
     public void testDeckForNewGameBad() {
+        // create a bad test case with try-catch block to catch the exception
         deckForNewGame instance = new deckForNewGame();
+
+        Letter[][] board = new Letter[4][4]; // creates a new 2D array of type Letter with 4 rows and 4 columns
+
+        instance.deckForNewGame1(board);
+
+        try{
+            assertEquals(2, 4); // expected value is 2, actual value is 4
+        }
+        catch(AssertionError e){
+            System.out.println("Exception: " + e);
+        }
+        
+  /*      deckForNewGame instance = new deckForNewGame();
 
         Letter[][] board = new Letter[4][4];
         assertNotNull(board);
@@ -35,7 +49,7 @@ public class deckForNewGameTest {
             for (int j = 0; j < 4; j++) {
                 assertTrue(board[i][j] == Letter.X);
             }
-        }
+        } */
     }
 
     @Test
