@@ -81,4 +81,13 @@ public class CheckInput {
         }
 
     }
+
+    public void checkInput(String row, String column) { // for testing only (InputMismatchException)
+        // sorround with try catch block
+        if (row.equals("1") || row.equals("2") || row.equals("3") || row.equals("4")
+                || column.equals("1") || column.equals("2") || column.equals("3") || column.equals("4")) {
+            throw new ArrayIndexOutOfBoundsException("Only 1 to 4 is allowed");
+        }
+
+    }
 }

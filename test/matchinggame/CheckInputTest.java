@@ -1,5 +1,7 @@
 package matchinggame;
 
+import java.util.InputMismatchException;
+
 import org.junit.Test;
 
 import junit.framework.TestCase;
@@ -28,6 +30,22 @@ public class CheckInputTest extends TestCase {
             fail("Should have thrown an exception");
         } catch (ArrayIndexOutOfBoundsException e) {
             assertTrue(true);
+        }
+    }
+
+    @Test
+    public void testCheckInputType(){
+        CheckInput instance = new CheckInput();
+
+        // we expect an exception to be thrown by the checkInput method because the row and column are not type int
+        try {
+            String row = "N";
+            String column = "SDF234";
+            instance.checkInput(row, column);
+        } catch (InputMismatchException e) {
+            assertTrue(true);
+            fail("Should have thrown an exception");
+
         }
     }
 
