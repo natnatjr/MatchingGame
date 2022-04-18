@@ -25,7 +25,7 @@ public class deckForNewGameTest {
 
     @Test
     public void testDeckForNewGameBad() {
-        // create a bad test case with try-catch block to catch the exception
+        // a bad test case with try-catch block to catch the exception
         deckForNewGame instance = new deckForNewGame();
 
         Letter[][] board = new Letter[4][4]; // creates a new 2D array of type Letter with 4 rows and 4 columns
