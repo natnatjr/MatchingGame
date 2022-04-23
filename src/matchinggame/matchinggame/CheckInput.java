@@ -5,6 +5,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CheckInput {
+    
+    private int row1, row2, column1, column2;
+    private Letter[][] cards, board;
+    private PrintBoard pb;
+    private GameOver over;
+    
     public void checkInput(Letter[][] cards, PrintBoard pb, Letter[][] board, GameOver over)
             throws InputMismatchException, ArrayIndexOutOfBoundsException {
 
@@ -13,9 +19,9 @@ public class CheckInput {
                 do {
                     if (!over.gameOver(board)) {
                         System.out.println("Row: (1-4)");
-                        int row1 = scanner.nextInt();
+                        row1 = scanner.nextInt();
                         System.out.println("Column: (1-4)");
-                        int column1 = scanner.nextInt();
+                        column1 = scanner.nextInt();
 
                         if (!board[row1 - 1][column1 - 1].equals(Letter.X)) {
                             System.out.println("Already Entered!");
@@ -29,9 +35,9 @@ public class CheckInput {
                         }
 
                         System.out.println("Row: (1-4)");
-                        int row2 = scanner.nextInt();
+                        row2 = scanner.nextInt();
                         System.out.println("Column: (1-4)");
-                        int column2 = scanner.nextInt();
+                        column2 = scanner.nextInt();
 
                         if ((row2 < 1 || row2 > 4) || (column2 < 1 || column2 > 4)) {
                             throw new ArrayIndexOutOfBoundsException("Only 1 to 4 is allowed");
@@ -73,21 +79,22 @@ public class CheckInput {
             }
         }
     }
-
-    public void checkInput(int row, int column) { // for testing only
-        // sorround with try catch block
-        if (row < 1 || row > 4 || column < 1 || column > 4) {
-            throw new ArrayIndexOutOfBoundsException("Only 1 to 4 is allowed");
-        }
-
+    
+    public int getRow1() {
+        return row1;
     }
 
-    public void checkInput(String row, String column) { // for testing only (InputMismatchException)
-        // sorround with try catch block
-        if (row.equals("1") || row.equals("2") || row.equals("3") || row.equals("4")
-                || column.equals("1") || column.equals("2") || column.equals("3") || column.equals("4")) {
-            throw new ArrayIndexOutOfBoundsException("Only 1 to 4 is allowed");
-        }
-
+    public int getRow2() {
+        return row2;
     }
+
+    public int getColumn1() {
+        return column1;
+    }
+
+    public int getColumn2() {
+        return column2;
+    }
+    
+
 }
