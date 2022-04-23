@@ -133,7 +133,7 @@ public class CheckInputTest {
     }
     
     @Test(expected = Exception.class)
-    public void testCheckInputCoulmn1Boundary() {
+    public void testCheckInputColumn1Boundary() {
         
         column1 = 4;
         instance.checkInput(cards, pb, board, over);
